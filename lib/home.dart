@@ -29,16 +29,31 @@ class HomeState extends State<Home> {
           children: [
             Text("Home", style: Theme.of(context).textTheme.bodyLarge),
             Text("Navigate to Page."),
+
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push('/' +Paths.pageA);
+                },
+                child: Text("Push Page A")),
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).push('/'+Paths.pageB);
+                },
+                child: Text("Push Page B"))
+          ,
+
+
+
             ElevatedButton(
                 onPressed: () {
                   GoRouter.of(context).push(Paths.page1);
                 },
-                child: Text("Page 1")),
+                child: Text("Push Page 1")),
             ElevatedButton(
                 onPressed: () {
                   GoRouter.of(context).push(Paths.page2);
                 },
-                child: Text("Page 2"))
+                child: Text("Push Page 2"))
           ],
         )
       ],

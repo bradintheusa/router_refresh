@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 // ignore: unused_import
 import 'routes.dart';
 
-class PageOne extends StatelessWidget {
-  const PageOne({Key? key}) : super(key: key);
+class PageA extends StatelessWidget {
+  const PageA({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class PageOne extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text("Page 1", style: Theme.of(context).textTheme.bodyLarge),
+        Text("Page A", style: Theme.of(context).textTheme.bodyLarge),
         Text("Navigate Back."),
         ElevatedButton(
             onPressed: () {
@@ -23,14 +23,14 @@ class PageOne extends StatelessWidget {
             child: Text("Back")),
         ElevatedButton(
             onPressed: () {
-              GoRouter.of(context).push(Paths.page2);
+              GoRouter.of(context).push('/' +Paths.pageB);
             },
-            child: Text("Push Page 2")),
+            child: Text("Push Page B")),
         ElevatedButton(
             onPressed: () {
-              GoRouter.of(context).go(Paths.page2);
+              GoRouter.of(context).go('/' +Paths.pageB);
             },
-            child: Text("Go Page 2"))
+            child: Text("Go Page B"))
       ],
     ));
   }
